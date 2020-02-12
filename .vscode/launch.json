@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ex0211_05<workspace_e2941e3c>",
+            "request": "launch",
+            "mainClass": "Ex0211_05",
+            "projectName": "workspace_e2941e3c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ex0211_06<workspace_e2941e3c>",
+            "request": "launch",
+            "mainClass": "Ex0211_06",
+            "projectName": "workspace_e2941e3c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ex0211_07<workspace_e2941e3c>",
+            "request": "launch",
+            "mainClass": "Ex0211_07",
+            "projectName": "workspace_e2941e3c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ex0211_08<workspace_e2941e3c>",
+            "request": "launch",
+            "mainClass": "Ex0211_08",
+            "projectName": "workspace_e2941e3c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ex0211_09<workspace_e2941e3c>",
+            "request": "launch",
+            "mainClass": "Ex0211_09",
+            "projectName": "workspace_e2941e3c"
+        }
+    ]
+}
