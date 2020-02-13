@@ -1,5 +1,7 @@
 def solution(v):
-
+        
+        
+    answer = []
     dic = {}
     dic2 = {}
     for i in range (0,len(a)):
@@ -13,10 +15,15 @@ def solution(v):
         else:
             dic2[v[i][1]]=1
     
-    answer = []
-    print(dic)
-    print(dic2)
+    for key, value in dic.items():
+        if(value == 1):
+            answer.append(key)
+    
+    for key, value in dic2.items():
+        if(value == 1):
+            answer.append(key)
+
     return answer
 
 a = [[1, 4], [3, 4], [3, 10]]
-solution(a)
+print(solution(a))
