@@ -6,64 +6,71 @@ public class Ex0212_02 {
 
     public static void main(String[] args) {
 
-        
-        String str;
         Scanner scan = new Scanner(System.in);
 
-        //소문자는 대문자로 대문자는 소문자로 바꾸는 프로그램
-        
-        System.out.println("변환할 문자열을 입력하세요.");
-        str = scan.next();
-        char[] chArr = new char[str.length()];
+        while (true) {
 
-        for(int i=0; i<chArr.length; ++i){
+            String result = "";
+            char ch;
+            System.out.println("문자를 입력하세요.>>");
+            String in_str = scan.next();
 
-            char temp = str.charAt(i);
-            if(temp>='a' && temp<='z'){
-                chArr[i] = (char)(temp -32);
-            } else if(temp>='A' && temp<='Z'){
-                chArr[i] = (char)(temp+32);
+            for (int i = 0; i < in_str.length(); i++) {
+                ch = in_str.charAt(i);
+
+                if (ch >= 'a' && ch <= 'z') {
+                    result = result + (char) (ch - 32) + "";
+                } else {
+                    result = result + (char) (ch + 32) + "";
+                }
             }
+
+            System.out.println("결과값: " + result);
         }
 
-        System.out.println("변환 결과는");
-        for (char c : chArr) {
-            System.out.print(c);
-        }
-        System.out.println();
+        // String str;
 
+        // //소문자는 대문자로 대문자는 소문자로 바꾸는 프로그램
 
+        // System.out.println("변환할 문자열을 입력하세요.");
+        // str = scan.next();
+        // char[] chArr = new char[str.length()];
 
+        // for(int i=0; i<chArr.length; ++i){
 
+        // char temp = str.charAt(i);
+        // if(temp>='a' && temp<='z'){
+        // chArr[i] = (char)(temp -32);
+        // } else if(temp>='A' && temp<='Z'){
+        // chArr[i] = (char)(temp+32);
+        // }
+        // }
 
+        // System.out.println("변환 결과는");
+        // for (char c : chArr) {
+        // System.out.print(c);
+        // }
+        // System.out.println();
 
-
-        
-        
-        
-        
-        
-        
-        
         // 영문 소문자를 받아서 대문자로 변환하는 프로그램
         // while (true) {
-        //     System.out.println("변환");
-        //     System.out.println("------");
-        //     //c = scan.next().charAt(0);
+        // System.out.println("변환");
+        // System.out.println("------");
+        // //c = scan.next().charAt(0);
 
-        //     // if (c >= 'a' && c <= 'z') {
-        //     //     c = (char) (c - 32);
-        //     // } else {
-        //     //     c = (char) (c + 32);
-        //     // }
-        //     //System.out.println(c);
-        //     String str = scan.next();
+        // // if (c >= 'a' && c <= 'z') {
+        // // c = (char) (c - 32);
+        // // } else {
+        // // c = (char) (c + 32);
+        // // }
+        // //System.out.println(c);
+        // String str = scan.next();
 
-        //     System.out.println("대문자 치환");
-        //     System.out.println(str.toUpperCase());
-            
-        //     System.out.println("소문자 치환");
-        //     System.out.println(str.toLowerCase());
+        // System.out.println("대문자 치환");
+        // System.out.println(str.toUpperCase());
+
+        // System.out.println("소문자 치환");
+        // System.out.println(str.toLowerCase());
         // }
 
         // char[] hex ={'C', 'A', 'F', 'E'};
