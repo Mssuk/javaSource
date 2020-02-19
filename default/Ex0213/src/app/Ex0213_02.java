@@ -13,11 +13,6 @@ public class Ex0213_02 {
         
         Scanner scan = new Scanner(System.in,"euc-kr");
 
-        String str1="강낭콩";
-        System.out.println("문자를 입력하세요.");
-        String str2 = scan.next();
-        System.out.println(str1.equals(str2));
-
         char[] hex = new char[10]; //입력받은 문자를 대입
         String str=""; //입력받은 문자열
         System.out.println("10개 이하로 문자를 입력하세요.(ABCDEF)>>");
