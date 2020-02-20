@@ -62,7 +62,7 @@ public class Ex0219_02 {
             if (arr[0] == 99) {
                 break;
             } else if (arr[0] == 0) {
-                break;
+                System.exit(0);
             }
 
             int max = Integer.MIN_VALUE;
@@ -93,7 +93,7 @@ public class Ex0219_02 {
             if (selectNum == 99) {
                 break;
             } else if (selectNum == 0) {
-                break;
+                System.exit(0);
             }
             int result = 0;
             if (selectNum < 0) {
@@ -133,7 +133,7 @@ public class Ex0219_02 {
             if (arr[i] == 99) {
                 break;
             } else if (arr[i] == 0) {
-                break;
+                System.exit(0);
             }
         }
         return arr;

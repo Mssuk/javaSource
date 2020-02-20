@@ -21,11 +21,15 @@ public class Student {
         this.kor = kor;
         this.eng = eng;
         this.math = math;
-        total = kor + eng + math;
-        avg = total / 3;
+       updateTotalAvg();
     }
 
     void printInfo() {
         System.out.printf("%s\t%d\t%d\t%d\t%d\t%.1f%n", name, kor, eng, math, total, avg);
+    }
+
+    void updateTotalAvg(){
+        total = kor +eng+ math;
+        avg = total/3;
     }
 }
