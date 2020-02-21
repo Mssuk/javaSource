@@ -23,22 +23,7 @@ public class Ex0219_06 {
             int menu = scan.nextInt();
             switch (menu) {
                 case 1:
-                    System.out.println("학생점수 입력");
-                    String name = "";
-                    int kor = 0, eng = 0, math = 0;
-
-                    for (int i = 0; i < stu.length; ++i) {
-                        System.out.println(i + 1 + " 번째 학생입니다.....");
-                        System.out.println("이름을 넣으세요.");
-                        name = scan.next();
-                        System.out.println("국어점수를 넣으세요.");
-                        kor = scan.nextInt();
-                        System.out.println("영어점수를 넣으세요.");
-                        eng = scan.nextInt();
-                        System.out.println("수학점수를 넣으세요.");
-                        math = scan.nextInt();
-                        stu[i] = new Student(name, kor, eng, math);
-                    }
+                    inputArr(stu);
                     break;
 
                 case 2:
@@ -129,7 +114,7 @@ public class Ex0219_06 {
                     System.out.println("잘못된 입력");
                     break;
             }
-        }
+        } // while
 
         // Lotto[] l = new Lotto[45];
         // for(int i=0; i<l.length ; i++){
@@ -164,5 +149,24 @@ public class Ex0219_06 {
         // // c1.number = 10;
         // // c1.kind= "클로버";
         // System.out.println(c1.number + " "+ c1.kind);
+    } //main
+    static void inputArr(Student[] stu){
+        Scanner scan = new Scanner(System.in, "euc-kr");
+        System.out.println("학생점수 입력");
+        String name = "";
+        int kor = 0, eng = 0, math = 0;
+
+        for (int i = 0; i < stu.length; ++i) {
+            System.out.println(i + 1 + " 번째 학생입니다.....");
+            System.out.println("이름을 넣으세요.");
+            name = scan.next();
+            System.out.println("국어점수를 넣으세요.");
+            kor = scan.nextInt();
+            System.out.println("영어점수를 넣으세요.");
+            eng = scan.nextInt();
+            System.out.println("수학점수를 넣으세요.");
+            math = scan.nextInt();
+            stu[i] = new Student(name, kor, eng, math);
+        }
     }
 }
