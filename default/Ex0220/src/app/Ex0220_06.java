@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 /**
  * Ex0220_06
+ * 
+ * 
+ * 각 줄로 최대값 구해서 출력
+ * 
  */
 public class Ex0220_06 {
 
@@ -62,9 +66,24 @@ public class Ex0220_06 {
             for (int i : is) {
                 System.out.print(i + "\t");
             }
+            if (j == 1) {
+                System.out.print("첫째줄의 최댓값: " + getMax(lotto[0]));
+            }
             System.out.println();
         }
         System.out.println("-----------------------------------------");
+    }
+
+    static int getMax(int[] arr) {
+
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; ++i) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+
+        return max;
     }
 
     static void inArr(int[] lotto) {
