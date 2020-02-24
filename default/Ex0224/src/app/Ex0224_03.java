@@ -17,6 +17,7 @@ public class Ex0224_03 {
         p2.standard = "led";
 
         Product p3 = new Product("red", 70, "oled");
+        
       
         System.out.println(p1.serialNum+" / "+p1.color);
         System.out.println(p2.serialNum+" / "+p2.color);
