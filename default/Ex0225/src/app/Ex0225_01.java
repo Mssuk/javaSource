@@ -108,20 +108,20 @@ public class Ex0225_01 {
         // input -> 좌표 60,50, 반지름 100
 
         Scanner scan = new Scanner(System.in);
-        int[] num = new int[3];
+        // int[] num = new int[3];
 
-        Circle[] c = new Circle[3];
-        Point[] pp = new Point[3];
-        String[] print = { "X좌표", "Y좌표", "반지름" };
+        // Circle[] c = new Circle[3];
+        // Point[] pp = new Point[3];
+        // String[] print = { "X좌표", "Y좌표", "반지름" };
 
-        for (int j = 0; j < num.length; j++) {
-            for (int i = 0; i < num.length; i++) {
-                System.out.println(print[i] + "값을 넣으세요.>>");
-                num[i] = scan.nextInt();
-            }
-            pp[j] = new Point(num[0], num[1]);
-            c[j] = new Circle(pp[j], num[2]);
-        }
+        // for (int j = 0; j < num.length; j++) {
+        //     for (int i = 0; i < num.length; i++) {
+        //         System.out.println(print[i] + "값을 넣으세요.>>");
+        //         num[i] = scan.nextInt();
+        //     }
+        //     pp[j] = new Point(num[0], num[1]);
+        //     c[j] = new Circle(pp[j], num[2]);
+        // }
 
         // for (Point ps : p) {
         // System.out.println(ps.getXY());
@@ -131,8 +131,19 @@ public class Ex0225_01 {
         // System.out.print(i+ " ");
         // }
 
-        for (int i = 0; i < c.length; i++) {
-            c[i].draw();
-        }
+        // for (int i = 0; i < c.length; i++) {
+        //     c[i].draw();
+        // }
+
+
+        //Triangle 
+        // 20,20, /40, 100 / 30, 10
+
+        Triangle tri= new Triangle(new Point(20,20), new Point(40, 100), new Point(30, 10));
+        tri.draw();
+
     }
 }
+
+
+//책의 
