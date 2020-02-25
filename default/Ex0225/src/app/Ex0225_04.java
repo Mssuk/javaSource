@@ -7,16 +7,21 @@ public class Ex0225_04 {
 
     public static void main(String[] args) {
 
-        CaptionTV c1= new CaptionTV();
-        c1.channel = 7;
-        c1.channelUp(); // 8
-        c1.channelUp(); // 9
-        c1.channelDown(); // 8 
-        System.out.println("현재 채널 " +  c1.channel);
-        c1.caption = true;
-        c1.displayCap("Hello World!");
+
+        Data d1 = new Data();
+        System.out.println(d1);
+
+
+        // CaptionTV c1= new CaptionTV();
+        // c1.channel = 7;
+        // c1.channelUp(); // 8
+        // c1.channelUp(); // 9
+        // c1.channelDown(); // 8 
+        // System.out.println("현재 채널 " +  c1.channel);
+        // c1.caption = true;
+        // c1.displayCap("Hello World!");
         
-        TV t1;
+        // TV t1;
 
     }
 }
@@ -59,6 +64,13 @@ class CaptionTV extends TV {
 }
 
 class Data {
-    int x ;
-    int y;
+    int x=10 ;
+    int y=10;
+
+
+    public String toString(){
+
+        return new String(x+y+"");
+    }
+
 }
