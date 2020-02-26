@@ -45,7 +45,7 @@ public class Ex0226_04 {
                     }
                     System.out.println("한 장을 추가합니다.");
                     for (int i = 0; i < users.length; i++) {
-                        giveCard(users[i], fDeck.cardDeck[cardCount]);
+                        giveCard(users[i], fDeck.pick(cardCount));
                         cardCount++;
                         System.out.println(users[i]);
                     }
@@ -92,7 +92,7 @@ public class Ex0226_04 {
         System.out.println("카드 세장을 전달합니다.");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < users.length; j++) {
-                giveCard(users[j], fDeck.cardDeck[cardCount]);
+                giveCard(users[j], fDeck.pick(cardCount));
                 cardCount++;
             }
         }
