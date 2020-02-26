@@ -6,9 +6,9 @@ package app;
 public class Ex0225_05 {
 
     public static void main(String[] args) {
-    //    Card c = new Card(1, 2);
-        Deck d = new Deck(); //52장의 카드 만들기;
-        for(int i=0; i<d.CARD_NUM; i++){
+        // Card c = new Card(1, 2);
+        Deck d = new Deck(); // 52장의 카드 만들기;
+        for (int i = 0; i < d.CARD_NUM; i++) {
             System.out.println(d.pick(i));
         }
         d.shuffle();
@@ -16,7 +16,7 @@ public class Ex0225_05 {
         // 7장 뽑아서 출력하기
 
         System.out.println("-------------------shuffle---------------------");
-        for(int i=0; i<d.CARD_NUM; i++){
+        for (int i = 0; i < d.CARD_NUM; i++) {
             System.out.println(d.pick(i));
         }
 
@@ -82,7 +82,7 @@ class Card {
         this.number = number;
     }
 
-    //카드 객체 찍기
+    // 카드 객체 찍기
     @Override
     public String toString() {
         // TODO Auto-generated method stub
