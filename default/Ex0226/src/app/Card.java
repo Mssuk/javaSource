@@ -3,7 +3,7 @@ package app;
 /**
  * Ex0226_04
  */
-class Card {
+public class Card {
     // 변수
     int kind;
     int number;
@@ -15,7 +15,7 @@ class Card {
         NONE, HEART, DIAMOND, SPADE, CLOVER
     }
 
-    Card() {
+    public Card() {
         this(Kind.CLOVER.ordinal(), 1);
         // this((int)(Math.random()*4)+1, 1);
     }
