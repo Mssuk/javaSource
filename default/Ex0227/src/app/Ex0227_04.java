@@ -9,6 +9,7 @@ public class Ex0227_04 {
 
     public static void main(String[] args) {
 
+
         /*
          * 
          * 변신 카 프로그램 1) 소방차 생성 2) 앰뷸런스 생성 3) 트럭 생성 ----------------- 4) 기본차로 변신 5) 원래

@@ -3,13 +3,12 @@ package app;
 /**
  * SamsungTv
  */
-public class SamsungTv {
+public class SamsungTv extends Product{
 
     static int count;
     int product_n = 1000;
-    String name;
     int tv_inch;
-    int price = 1000;
+
 
     // 초기화 블럭
     {
@@ -17,13 +16,13 @@ public class SamsungTv {
     }
 
     SamsungTv() {
-
+        price = 1000;
+        name = "TV";
     }
 
     SamsungTv(String name, int tv_inch, int price) {
         this.name = name;
         this.tv_inch = tv_inch;
-        this.price = price;
     }
 
 }
