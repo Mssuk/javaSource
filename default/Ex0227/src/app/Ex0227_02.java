@@ -15,14 +15,13 @@ public class Ex0227_02 {
         t2.channel = 7;
         // t2.caption() 이거 안됨....
 
-        CaptionTv c2 = new CaptionTv();
+        CaptionTv c2;
         //t2 = c2; 이거는 원래 됨.
 
         c2 = (CaptionTv)t2; //이거 가능함.
         //CaptionTv c3=  (CaptionTv)t2; 이것도 가능함. (같은 말임)
 
-
-
+     
 
 
 
@@ -43,8 +42,16 @@ public class Ex0227_02 {
         c.caption();
         System.out.println("CaptionTv 객체 채널:" + c.channel);
         
+        CaptionTv t3 = new CaptionTv();
+        test(t3);
 
 
+    }
 
+    static void test(CaptionTv t3){
+        CaptionTv tt;
+        tt=t3;
+
+        tt.channel = 3;
     }
 }

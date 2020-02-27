@@ -9,6 +9,7 @@ public class CaptionTv  extends Tv{
 
     void caption(){
         System.out.println(text);
+
     }
     
 }
