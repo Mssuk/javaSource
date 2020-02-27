@@ -33,19 +33,9 @@ final public class Stu01 {
         return hak_num;
     }
 
-    public void setHak_num(int hak_num) {
-        this.hak_num = hak_num;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setKor(int kor){
-        this.kor = kor;
-    }
+    
 }
