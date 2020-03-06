@@ -1,4 +1,5 @@
 import java.util.Calendar;
+import java.util.Date;
 
 public class Ex0305_04 {
     //2020년 3월 14일 15시39분 42초
@@ -31,6 +32,8 @@ public class Ex0305_04 {
         System.out.println(day2.get(Calendar.DAY_OF_WEEK));
         System.out.println(days_name[day2.get(Calendar.DAY_OF_WEEK)] +"요일");
         System.out.println(day2.getTime());
+
     }
 
+    
 }
