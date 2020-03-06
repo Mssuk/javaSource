@@ -12,7 +12,12 @@ public class Member {
     private String tel;
     private int money;
     private int point;
+    //가입 날짜
+    private String signDate;
 
+    public void setSignDate(String signDate) {
+        this.signDate = signDate;
+    }
 
     public Member(String name, String id, String pw, String tel){
         this.name = name;
@@ -43,7 +48,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return String.format("아이디:%s\t비밀번호:%s\t이름:%s\t전화번호:%s\t보유머니:%d\t보유포인트:%d",id,pw,name,tel,money,point);
+        return String.format("아이디:%s\t비밀번호:%s\t이름:%s\t전화번호:%s\t보유머니:%d\t보유포인트:%d\t가입일:%s",id,pw,name,tel,money,point, signDate);
     }
 
 }

@@ -24,7 +24,16 @@ public class MainMall {
                         cmd.login();
                         break;
                     case 3:
+                        cmd.logout();
                         break;
+                    case 4:
+                        cmd.buy();
+                        break;
+
+                    case 5:
+                        cmd.printPurchase();
+                        break;
+
                     case 8:
                         cmd.searchMember();
                         break;

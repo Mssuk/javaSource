@@ -1,27 +1,50 @@
 package Mall;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import Mall.Product.Product;
+import Mall.Product.Ref.*;
+import Mall.Product.TV.*;
+import Mall.Product.Washer.*;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ExcuteMall {
     //명령어
 
     Login loginSession = new Login();
     ArrayList<Member> members = new ArrayList<>();
+    HashMap<Integer, Product> products = new HashMap<>();
+    ArrayList<Purchase> purchaseLog = new ArrayList<>();
+
     Scanner scan = new Scanner(System.in);
+
+    ExcuteMall(){
+        int proNumber = 1;
+        //시작할 때 상품 목록에 상품 넣어줌
+        products.put(proNumber++,new LCD(1000,"42LCDTV", "black",42));
+        products.put(proNumber++, new LED(1200,"TNMTV 무결점", "black",65));
+        products.put(proNumber++, new OLED(1900,"65OLED873 필립스", "black",65));
+        products.put(proNumber++, new BasicRef(320, "레트로 원도어", "red", 92));
+        products.put(proNumber++, new DobuleDoorRef(1140, "디오스 S831S30", "silver", 821));
+        products.put(proNumber++, new TopLoader(374, "TR13BK LG통돌이", "white", 13));
+        products.put(proNumber++, new FrontLoader(519, "트롬F9WK", "silver", 9));
+        products.put(proNumber++, new DryFrontLoader(1470, "H드럼 플렉스워시건조", "black", 20));
+    }
+
 
     public void printMenu() {
 
         System.out.println("------**--.++--..-..*-*-*-");
         System.out.println("[쇼핑몰 프로그램]");
         System.out.print(loginSession.sessionEmpty() ? "1.회원가입\n" : "");
-        System.out.println(loginSession.sessionEmpty() ? "2.로그인" : "2.로그아웃");
-        System.out.print(loginSession.sessionEmpty()  ? "" : "3.마이페이지\n");
+        System.out.println(loginSession.sessionEmpty() ? "2.로그인" : "3.로그아웃");
+        System.out.println("4.상품구매");
+        System.out.print(loginSession.sessionEmpty() ? "" : "5.구매내역보기\n");
         System.out.println("8.회원정보검색");
         System.out.println("9.회원정보보기");
         System.out.println("0.종료");
         System.out.println("------**--.++--..-..*-*-*-");
-        System.out.print(loginSession.sessionEmpty()  ? "" : "☆★☆★☆★ " + loginSession.getMember(0).getName()+ "님 환영합니다.! ☆★☆★☆★\n");
         System.out.print("원하는 번호를 선택하세요.>> ");
     }
 
@@ -100,6 +123,9 @@ public class ExcuteMall {
         System.out.println("회원 가입을 축하합니다. 가입 포인트 100point 지급!");
         newMember.setPoint(100);
 
+        Calendar time = Calendar.getInstance();
+        newMember.setSignDate(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(time.getTime()));
+
         members.add(newMember);
 
     }
@@ -108,9 +134,8 @@ public class ExcuteMall {
     //로그인
     public void login() {
 
-        //로그아웃
+        //로그아웃 안했을 때는 로그인 못함
         if(!loginSession.sessionEmpty()){
-            loginSession.logout(loginSession.getMember(0));
             return;
         }
 
@@ -128,12 +153,27 @@ public class ExcuteMall {
             System.out.print(i > 0 ? "시도횟수: " + (i + 1) + "번\n" : "");
             inputPW = scan.next();
             if (inputPW.equals(mem.getPw())) {
-                loginSession.login(mem);
+                //로그인
+                loginSession.login(inputID, inputPW);
                 return;
             }
         }
 
         System.out.println("비밀번호 입력횟수 초과");
+
+    }
+
+    //로그아웃
+    public  void logout(){
+        //로그인 안했을 때는 로그아웃 못함
+        if(loginSession.sessionEmpty()){
+            return;
+        }
+
+        //ID를 한번더 입력 후 일치한 ID 삭제
+        System.out.println("아이디를 입력하세요");
+        String inputID = scan.next();
+        loginSession.logout(inputID);
 
     }
 
@@ -179,10 +219,176 @@ public class ExcuteMall {
     }
 
 
+    //상품 구매
+    public void buy(){
+        System.out.println("상품 구매입니다.");
+
+        System.out.println("아이디를 입력해주세요.");
+        String id = scan.next();
+        if(loginSession.checkLogin(id)){
+            System.out.println("반갑습니다 " + id+ "님");
+        } else if(loginSession.sessionEmpty()){
+            System.out.println("로그인을 먼저 해주세요.");
+            return;
+        } else{
+            System.out.println("아이디를 올바르게 다시 입력해주세요.");
+            return;
+        }
+
+        while(true){
+
+            System.out.println("상품 보기");
+            System.out.println("1) TV 2)냉장고 3)세탁기 0)이전으로");
+            System.out.print("원하는 번호를 입력하세요.>>");
+            int menu = scan.nextInt();
+
+            int lower = 0;
+            int upper  = 0;
+            switch (menu){
+                case 1:
+                    System.out.println("<TV 상품 목록>");
+                    Map<Integer, Product> filter_Tv = products.entrySet()
+                            .stream()
+                            .filter(map-> map.getValue() instanceof  TV)
+                            .collect(Collectors.toMap(map-> map.getKey(), map-> map.getValue()));
+
+                    lower = Integer.MAX_VALUE;
+                    upper = Integer.MIN_VALUE;
+
+                    System.out.println("---------------------------------------------------------------------------------------------------");
+                    for (Map.Entry<Integer, Product> et : filter_Tv.entrySet()) {
+                        if(et.getKey()<lower){
+                            lower = et.getKey();
+                        }
+                        if(et.getKey() > upper){
+                            upper = et.getKey();
+                        }
+                        System.out.println("[상품no:" + et.getKey() + "] " + et.getValue());
+                        System.out.println("-----------------------------------------------------------------------------------------------");
+                    }
+                    purchase(lower, upper, id);
+                    break;
+
+                case 2:
+                    System.out.println("<냉장고 상품 목록>");
+                    Map<Integer, Product> filter_Ref = products.entrySet()
+                            .stream()
+                            .filter(map-> map.getValue() instanceof  Ref)
+                            .collect(Collectors.toMap(map-> map.getKey(), map-> map.getValue()));
+
+                    lower = Integer.MAX_VALUE;
+                    upper = Integer.MIN_VALUE;
+
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+                    for (Map.Entry<Integer, Product> et : filter_Ref.entrySet()) {
+                        if(et.getKey()<lower){
+                            lower = et.getKey();
+                        }
+                        if(et.getKey() > upper){
+                            upper = et.getKey();
+                        }
+                        System.out.println("[상품no:" + et.getKey() + "] " + et.getValue());
+                        System.out.println("--------------------------------------------------------------------------------------------------");
+                    }
+                    purchase(lower, upper, id);
+                    break;
+
+                case 3:
+                    System.out.println("세탁기 상품 목록");
+                    Map<Integer, Product> filter_Was = products.entrySet()
+                            .stream()
+                            .filter(map-> map.getValue() instanceof  Washer)
+                            .collect(Collectors.toMap(map-> map.getKey(), map-> map.getValue()));
+
+                    lower = Integer.MAX_VALUE;
+                    upper = Integer.MIN_VALUE;
+
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+                    for (Map.Entry<Integer, Product> et : filter_Was.entrySet()) {
+                        if(et.getKey()<lower){
+                            lower = et.getKey();
+                        }
+                        if(et.getKey() > upper){
+                            upper = et.getKey();
+                        }
+                        System.out.println("[상품no:" + et.getKey() + "] " + et.getValue());
+                        System.out.println("--------------------------------------------------------------------------------------------------");
+                    }
+                    purchase(lower, upper, id);
+                    break;
+
+                case 0:
+                    return;
+
+                default:
+                    System.out.println("잘못된 입력");
+            }
+
+        }
+
+    }
+
+    private void purchase(int lower, int upper, String id){
+
+        while(true) {
+
+            System.out.println("상품을 구매하시겠습니까?");
+            System.out.println("1) 구매하겠습니다 2)아니오(이전으로)");
+            int select = scan.nextInt();
+            if (select == 1) {
+                System.out.println("구매를 원하는 상품의 번호를 입력하세요.");
+                int select2 = scan.nextInt();
+                if (select2 < lower || select2 > upper){
+                    System.out.println("잘못된 범위값. 범위는 "+lower +"~"+upper + " 사이입니다.");
+                    continue;
+                }
+                    Product p = products.get(select2);
+                System.out.println("구매하실 상품이 " + p.getName() + " 이(가) 맞습니까? (y/n)");
+                String confirm = scan.next();
+                if (confirm.equals("y")) {
+                    //구매 확정
+                    purchaseLog.add(new Purchase(id, p.getName(), p.getBonuspoint()));
+                } else if (confirm.equals("n")) {
+                    System.out.println("이전으로 돌아갑니다.");
+                } else {
+                    System.out.println("잘못된 입력. 이전으로 돌아갑니다.");
+                }
+            } else if (select == 2){
+                return;
+            } else{
+                System.out.println("잘못된 입력");
+            }
+        }
+    }
+
+
+    //구매내역 보기
+    public void printPurchase(){
+        System.out.println("sdfdsf");
+        for(int i=0; i<purchaseLog.size(); ++i){
+            System.out.println(purchaseLog.get(i));
+        }
+    }
+
+
     //회원정보보기
     public void printMembers() {
-        //오름차순 정렬
-        members.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+
+        int query = 0;
+        System.out.println("정렬 기준 1) 이름 순 2) 아이디 순");
+        query = scan.nextInt();
+
+        if(query == 1) {
+            //이름 오름차순 정렬
+            members.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+        } else if(query == 2){
+            //아이디 오름차순 정렬
+            members.sort((o1,o2) ->{
+                return o1.getId().compareTo(o2.getId());
+            });
+        } else{
+            System.out.print("잘못된 입력");
+        }
 
         for (var m :
                 members) {
