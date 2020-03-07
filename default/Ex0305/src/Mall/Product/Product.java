@@ -1,6 +1,7 @@
 package Mall.Product;
 
 public abstract class Product {
+
     protected double bonusRate;
     protected int price;
     protected int bonuspoint;
@@ -14,4 +15,10 @@ public abstract class Product {
     public int getBonuspoint() {
         return bonuspoint;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public abstract <T> T GetType();
 }
