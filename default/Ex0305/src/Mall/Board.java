@@ -85,12 +85,12 @@ public class Board {
             if (capP.postNum == value) {
                 if (capP.isSecret) {
                     if (loginSession.sessionEmpty()) {
-                        System.out.println("권한이 없습니다.1");
+                        System.out.println("권한이 없습니다.");
                         break;
                     } else {
                         String id = (String) loginSession.getLoginInfo().getKey();
                         if (!id.equals(capP.writer) && !id.equals("admin")) { //관리자는 모든게시글 열람가능
-                            System.out.println("권한이 없습니다.2");
+                            System.out.println("권한이 없습니다.");
                             break;
                         }
                     }

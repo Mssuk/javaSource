@@ -54,10 +54,12 @@ public class ExcuteMall {
         System.out.println("5.구매내역보기");
         System.out.println("6.문의게시판");
         System.out.println("8.회원정보검색");
-        System.out.println("9.회원정보보기");
         //관리자 전용메뉴
-        if (loginSession.getLoginInfo() != null && loginSession.getLoginInfo().getKey().equals("admin")) {
+        if (!showFlag && loginSession.getLoginInfo().getKey().equals("admin")) {
+            System.out.println("9.회원정보보기(admin)");
             System.out.println("10.게시판 관리(admin)");
+        } else{
+            System.out.println("9.나의정보보기");
         }
         System.out.println("0.종료");
         System.out.println("------**--.++--..-..*-*-*-");
@@ -412,14 +414,14 @@ public class ExcuteMall {
         Member m = loginSession.getLoginMember();
         int pPrice = p.getPrice();
         System.out.println("상품 가격은 " + pPrice + "000원 입니다. 적립 가능한 포인트는 " + p.getBonuspoint() + "점 입니다.");
-        System.out.println("현재 보유포인트 ((" + m.getPoint() + "점)) 까지 사용할 수 있습니다. 얼마나 사용하시겠습니까?");
-        System.out.println("포인트 사용시 구매포인트 적립 안됨 (1점당 1000원 할인)");
+        System.out.println("보유 포인트 중 ((" + Math.min(pPrice, m.getPoint()) + "점)) 까지 사용할 수 있습니다. 얼마나 사용하시겠습니까? (1점당 1000원 할인)");
+        System.out.println("주의사항) 포인트 사용시 구매포인트 적립 안됨. ");
         int usePoint;
         do {
             usePoint = -1;
             try {
                 usePoint = scan.nextInt();
-                if (usePoint > -1 && usePoint <= m.getPoint()) {
+                if (usePoint > -1 && usePoint <= m.getPoint() && usePoint <= pPrice) {
                     pPrice -= usePoint;
                 } else {
                     System.out.println("범위를 벗어난 입력 값입니다.");
