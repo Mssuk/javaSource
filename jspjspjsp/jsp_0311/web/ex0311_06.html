@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구글사이트</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background: #f37320;
+            border-radius: 150px;
+        }
+
+        /*input {*/
+        /*    width: 449px;*/
+        /*    height: 44px;*/
+        /*    padding: 1px 0 1px 20px;*/
+        /*}*/
+
+        #search {
+            border-radius: 20px;
+        }
+        /*form {*/
+        /*    margin: 0 auto;*/
+        /*    width: 451px;*/
+
+        /*}*/
+
+    </style>
+
+</head>
+<body>
+<!--<div>-->
+<!--    <img src="images/google.png" alt="구글로고">-->
+<!--</div>-->
+
+<!--<form action="http://www.google.com" method="get">-->
+<!--    <input id="search" type="text" placeholder="Google 검색 또는 URL 입력">-->
+<!--&lt;!&ndash;    <input type="submit" value="구글검색">&ndash;&gt;-->
+<!--</form>-->
+<form action="http://naver.com" name="join" method="get">
+    <label>아이디:</label><input type="text" name="m_id"><br>
+    <label>패스워드:</label><input type="password" name="m_pw"><br>
+    <label>레벨:</label><input type="text" name="level"  value="vip회원" readonly><br>
+    <label>이메일:</label><input type="email" name="m_mail">
+    <input type="hidden" name="ip" value="192.168.0.170">
+    <br>
+    <input type="submit" value="전송">
+    <input type="reset" value="취소">
+
+
+
+</form>
+
+
+</body>
+</html>

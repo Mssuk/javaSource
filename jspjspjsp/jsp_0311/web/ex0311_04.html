@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <style>
+        img{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<img alt="event2" src="http://192.168.0.147:8181/images/bugerking.jpg" usemap="#event2">
+<map name="event2">
+    <area alt="버거킹" title="버거킹" href="https://www.burgerking.co.kr/#/home"
+          coords="29,269,46,342,112,333,144,352,149,329,177,320,169,256,111,261" shape="poly">
+    <area  alt="콰트로치즈와퍼주니어" title="콰트로치즈와퍼주니어"
+          href="https://www.burgerking.co.kr/#/menuDetail/K100003/%EC%99%80%ED%8D%BC&amp;%EB%B2%84%EA%B1%B0/1090019"
+          coords="123,830,149" shape="circle">
+    <area  alt="통새우와퍼주니어" title="통새우와퍼주니어"
+          href="https://www.burgerking.co.kr/#/menuDetail/K100003/%EC%99%80%ED%8D%BC&amp;%EB%B2%84%EA%B1%B0/1090097"
+          coords="485,795,283,560" shape="rect">
+</map>
+
+
+<img alt="event3" src="http://192.168.0.147:8181/images/domino.jpg" usemap="#event3">
+<map name="event3">
+    <area target="" alt="도미노" title="도미노" href="https://web.dominos.co.kr/event/entry/435" coords="27,445,567,844" shape="rect">
+</map>
+
+
+</map>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="./js/imageMapResizer.min.js"></script>
+
+<script type="text/javascript">
+    $('map').imageMapResize();
+</script>
+
+</body>
+</html>

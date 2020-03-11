@@ -7,11 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  <a href="./ex0310_01.html">1page</a>
-  <a href="./ex0310_02.html">2page</a>
-  </body>
+</head>
+<body>
+<ol>
+    <li><a href="./ex0310_01.html">1page</a></li>
+    <li><a href="./ex0310_02.html">2page</a></li>
+    <li><a href="./ex0310_03.html">3page</a></li>
+    <li><a href="./ex0310_04.html">4page</a></li>
+    <li><a href="./ex0310_05.html">5page</a></li>
+    <li><a href="./ex0310_06.html">6page</a></li>
+</ol>
+</body>
 </html>
