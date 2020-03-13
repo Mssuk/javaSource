@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:800|Noto+Sans+KR&display=swap&subset=korean"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        div {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        h4 {
+            font-size: 42px;
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+        }
+
+        form {
+            width: 650px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 476px;
+            height: 60px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            height: 90px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            font-family: 'Noto Sans KR', sans-serif;
+            text-decoration: underline;
+            text-shadow: 2px 2px darkgrey;
+            letter-spacing: 0.2em;
+            word-spacing: 2px;
+        }
+
+        .text_important {
+            color: crimson;
+            font-weight: bold;
+        }
+
+        #gender {
+            color: #ff9584;
+            font-weight: 900;
+        }
+
+        #div01 {
+            width: 300px;
+            height: 300px;
+            background: goldenrod;
+        }
+
+        #div01:hover {
+            -webkit-transform: rotate(45deg);
+        }
+
+        p {
+            width: 500px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        p:hover {
+            overflow: scroll;
+        }
+
+        #list01{
+            list-style : none;
+            background-image: url("image/arrow.png");
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: 20px;
+            padding-left: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div style="margin-left: 500px; padding: 30px">
+
+    <ul>
+        <li id="list01">
+            회원의 권리를 보장하기 위하여 회원 본인 확인 후 회원 본인이 아닐 때에는 회원초청 요금이 적용됩니다.
+        </li>
+        <li >
+            규정 숙박정원 초과 시 미리 말씀하여 주시면 추가요금을 할인 받으실 수 있습니다.
+        </li>
+
+    </ul>
+</div>
+<!--<video style="margin-top: 200px" src="/image/v01.mp4" autoplay muted></video>-->
+<!--<audio controls src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga"> Your user agent does not support the-->
+<!--    HTML5 Audio element.-->
+<!--</audio>-->
+<div>
+    <h4>회원가입</h4>
+    <form action="">
+        <ul>
+            <li>
+                <label>아이디</label>
+                <input type="text" placeholder="아이디를 입력해주세요.">
+            </li>
+            <li>
+                <label class="text_important">패스워드</label>
+                <input type="text" placeholder="비밀번호를 입력해주세요.">
+            </li>
+            <li>
+                <label class="text_important">패스워드확인</label>
+                <input type="text" placeholder="비밀번호를 다시 입력해주세요.">
+            </li>
+            <li>
+                <label>전화번호</label>
+                <input type="text" placeholder="전화번호를 입력하세요.">
+            </li>
+            <li>
+                <label class="text_important" id="gender">성별</label>
+                <input type="text" placeholder="성별을 입력하세요.">
+            </li>
+        </ul>
+        <p>
+            20세기 실존주의 문학의 대표 작가 알베르 카뮈의 소설 『페스트』. '페스트'라는 비극적인 현실 속에서 의연히 운명과 대결하는 인간의 모습을 그린 이 작품은 20세기 문학이 남긴 기념비적인
+            고전으로 꼽힌다. 무서운 전염병이 휩쓴 폐쇄된 도시에서 재앙에 대응하는 사람들의 각기 다른 모습이 묘사된다. 인물들은 재앙에 대처하는 서로 다른 태도를 드러내 보인다. 그들의 모습을 통해 절망과
+            맞서는 것은 결국 행복에 대한 의지이며, 잔혹한 현실과 죽음 앞에서도 희망을 놓지 않는 것이야말로 이 부조리한 세상에 대한 진정한 반항임을 이야기한다. 이번 한국어판은 1999년 우리나라 최고의
+            불문학 번역가로 선정된 김화영 교수가 새로운 번역으로 선보인다.
+        </p>
+        <div></div>
+    </form>
+</div>
+</body>
+</html>

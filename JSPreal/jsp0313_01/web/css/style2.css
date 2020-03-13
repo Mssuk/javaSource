@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav {
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav div {
+    height: 90px;
+    box-sizing: border-box;
+    float: left;
+}
+
+/*로고 부분*/
+nav div:nth-child(1) {
+    width: 150px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/*메뉴 부분*/
+#top_ul {
+    width: 1360px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+#top_ul > li {
+    float: left;
+    width: 120px;
+    color: #666;
+    margin-right: 10px;
+    font-size: 17px;
+    text-align: center;
+}
+
+#top_icon {
+    width: 340px;
+    margin-left: 10px;
+}
+#top_icon div{
+    float: left;
+    margin-right: 20px;
+}
+
+
+#top_icon > div:nth-child(1) {
+    width: 118px;
+    height: 53px;
+    font-size: 16px;
+    background: black;
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 13px;
+}
+
+#top_icon > div:nth-child(2) {
+    width: 70px;
+    height: 53px;
+    color: black;
+    margin-top: 15px;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 13px;
+    background: url("../images/IMG/mypage.png") no-repeat scroll center center;
+}
+
+#top_icon > div:nth-child(3) {
+    width: 90px;
+    height: 53px;
+    font-size: 16px;
+    color: black;
+    margin-top: 15px;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 13px;
+}
+
+article>div{
+    width: 100%;
+    height: 150px;
+}
+
+article > div > p {
+    width: 1000px;
+    height: 56px;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    font-size: 38px; color:#333;
+}
+
+article > div:nth-child(2) {
+    width: 1000px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+#art_form > div{
+    width: 480px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+#art_form>div>form>select{
+    width: 123px;
+    height: 44px;
+    border: 1px solid #ccc;
+    line-height: 42px;
+    font-size : 15px;
+    color : #666;
+    padding: 0 10px;
+}
+
+#art_form>div>form>input{
+    width: 273px;
+    height: 42px;
+    border: 1px solid #ccc;
+    line-height: 42px;
+    font-size : 15px;
+    color : #666;
+    padding: 0 10px;
+}
+
+#art_form>div>form>span{
+    width: 273px;
+    height: 42px;
+    border: 1px solid #ccc;
+    line-height: 42px;
+    font-size : 15px;
+    color : #666;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+#art_form>div>form>button{
+    width: 50px;
+    height: 45px;
+    background: #3d3d3d;
+    border: 0;
+}
+
+#art_form>div>form>button>span{
+    width: 50px;
+    height: 45px;
+    background: url("../images/IMG/search-box-search.png") center center no-repeat;
+    color : #666;
+    padding: 0 10px;
+}
+
+#art_table>div{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#art_table table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#art_table table thead{
+    border-top: 3px solid #26252b;
+    border-bottom: 1px solid #bdbdbf;
+}
+
+#art_table table tr{
+    height: 70px;
+    text-align: center;
+}

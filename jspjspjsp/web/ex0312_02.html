@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Title</title>
+
+</head>
+<body>
+<div class="container">
+    <form action="">
+        <fieldset class="border p-2">
+            <legend class="w-auto">신청 과목</legend>
+            <p>이 달에 신청할 과목을 선택하세요(1과목만 가능)</p>
+            <label><input type="radio" name="subject" value="회화">회화</label>
+            <label><input type="radio" name="subject" value="문법">문법</label>
+            <label><input type="radio" name="subject" value="작문">작문</label>
+        </fieldset>
+
+        <fieldset class="border p-5 rounded-pill">
+            <legend class="w-auto">메일링</legend>
+            <div class="custom-control-inline custom-checkbox" style="margin-right: 25px">
+                <input type="checkbox" name="mailing" id="mailing" value="news" class="custom-control-input" checked>
+                <label for="mailing" class="custom-control-label ">해외단신</label>
+            </div>
+            <div class="custom-control-inline custom-checkbox" style="margin-right: 25px">
+                <input type="checkbox" name="mailing2" id="mailing2" value="dialog" class="custom-control-input">
+                <label for="mailing2" class="custom-control-label">5분 회화</label>
+            </div>
+            <div class="custom-control-inline custom-checkbox" style="margin-right: 25px">
+                <input type="checkbox" name="mailing3" id="mailing3" value="pop" class="custom-control-input">
+                <label for="mailing3"  class="custom-control-label">모닝팝스</label>
+            </div>
+        </fieldset>
+        <div class="row">
+            <div class="col">
+                <fieldset class="border border-warning">
+                    <legend class="w-auto">달력</legend>
+                    <input type="date" name="date">
+                    <input type="month" name="month">
+                    <input type="week" name="week">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <fieldset class="border border-primary">
+                    <legend class="w-auto">시간</legend>
+                    <input type="time" name="time" value="09:00">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <fieldset class="border border-success">
+                    <legend class="w-auto">학과 선택</legend>
+                    <select name="major" id="major">
+                        <option value="archi">건축공학과</option>
+                        <option value="mechanic">기계공학과</option>
+                        <option value="indus">산업공학과</option>
+                        <option value="elec">전자공학과</option>
+                        <option value="computer" selected>컴퓨터공학과</option>
+                        <option value="chemical">화학공학과</option>
+                    </select>
+                    <label> 이름: </label> <input type="text" autofocus required>
+                    <label> Tel: </label> <input type="text" value="010-1111-1111" readonly>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="submit" value="전송">
+                <button class="btn btn-info">전송</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
